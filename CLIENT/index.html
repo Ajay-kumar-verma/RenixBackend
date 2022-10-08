@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RENIX TECHNOLOGY</title>
+</head>
+<body>
+
+    <script>
+        
+        const CertificateID=prompt("Enter certificate is \n");
+        fetch(`http://www.localhost:3000/user/${CertificateID}`)
+        .then((response) => response.json())
+        .then((data) =>{
+      let x=document.getElementsByClassName("p"); 
+      console.log(data);
+      x[0].innerHTML+=data.FirstName+data.LastName;
+      x[1].innerHTML+=data.CertificateID;
+    //   console.log(x[0]); 
+    });
+    
+</script>
+
+<p class="p" >Name :</p>  
+<p class="p">Certificate ID : </p>
+
+
+
+
+
+</body>
+</html>
